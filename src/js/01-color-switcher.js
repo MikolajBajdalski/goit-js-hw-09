@@ -12,16 +12,16 @@ const start = () => {
   intervalId = setInterval(() => {
     body.style.backgroundColor = getRandomHexColor()
   }, 1000)
-  startButton.disabled = true;
-  stopButton.disabled = false;
+  startButton.setAttribute("disabled", true)
+  stopButton.removeAttribute("disabled", false);
 }
 
 
 
 function stop() {
   clearInterval(intervalId)
-  startButton.disabled = false;
-  stopButton.disabled = true;
+  startButton.removeAttribute("disabled", false);
+  stopButton.setAttribute("disabled", true);
 }
 
 startButton.addEventListener('click', start)
